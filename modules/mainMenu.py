@@ -22,10 +22,7 @@ async def Show(message: Message, bot: Bot, api: API):
         await Mini(message, bot, api)
     else:
         server_settings = await database.getBdData('settings', 'id', "'1'")
-        num1 = await database.pretty(data[12])
-        num2 = await database.pretty(data[13])
-        num3 = await database.pretty(data[14])
-        num4 = await database.pretty(data[15])
+        num1 = await database.pretty(data[11])
         real_time = datetime.datetime.now()
         real_time_hour = real_time.hour
         real_time_minute = real_time.minute
@@ -36,10 +33,7 @@ async def Show(message: Message, bot: Bot, api: API):
         if data[11] == 0:
             await message.answer(
                 message=f"🎯 Главное меню{server_settings[21]}\n\n{TEXT_OBJ}"
-                        f"💵 Доллары на руках » {num1}\n"
-                        f"💶 Евро на руках » {num2}\n"
-                        f"💴 Иены на руках » {num3}\n"
-                        f"💷 Фунты на руках » {num4}",
+                        f"💵 Доллары на руках » {num1}\n",
                 keyboard=(
                     Keyboard(one_time=True, inline=False)
                     .add(Text("👤 Действия персонажа", {"cmd": "characterAction.Show"}), color=KeyboardButtonColor.SECONDARY)

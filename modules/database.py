@@ -29,6 +29,26 @@ async def connect_base():  # Подключение к БД
 
 async def registerNewAccaunt(user_id):  # Создание нового аккаунта в базе данных
     try:
+        # ADMIN INFO
+        # ------------------------------------------------------------
+        # [0] = ИМЯ АДМИНИСТРАТОРА
+        # [1] = СКОЛЬКО ЛЕТ АДМИНИСТРАТОРУ
+        # [2] = ГОРОД ПРОЖИВАНИЯ АДМИНИСТРАТОРА
+        # [3] = TELEGRAM НИК
+        # [4] = ДАТА ПОСТАНОВЛЕНИЯ В АДМИНИСТРАТОРЫ
+        # [5] = ЛОГИ ДЕЙСТВИЙ НАД АДМИНИСТРОРОМ
+        # [6] = ДАТА СНЯТИЕ АДМИНИСТРАТОРА
+        # [7] = ПРИЧИНА СНЯТИЯ
+        # [8] = СТАТУС АДМИНИСТРАТОРА
+        # [9] = ОСОБАЯ ДОЛЖНОСТЬ АДМИНИСТРАТОРА
+        # ------------------------------------------------------------
+        admin_info = ['', '', '', '', '', '', '', '', '', '']
+
+        # VIP
+        # ------------------------------------------------------------
+        # [0] = НАЗВАНИЕ VIP
+        # [1] = СРОК ДЕЙСТВИЯ VIP (ЕСЛИ БУДЕТ -100, ТО ВЕЧНАЯ)
+        # ------------------------------------------------------------
         VIP_table = ['no vip', '0']
 
         License = ['❌ Отсутствует', '❌ Отсутствует', '❌ Отсутствует', '❌ Отсутствует', '❌ Отсутствует', '❌ Отсутствует',
@@ -40,7 +60,7 @@ async def registerNewAccaunt(user_id):  # Создание нового акка
         connection = await connect_base()
         async with connection.cursor() as cursor:
             new_user = "INSERT INTO `users` (vk_id, state, nick, mail, telephone, lvl, exp, sex, nationality, admin, dollars, bank_dollars, donate, VIP, member, rang, license, warns, clothes, work, fighting, skillArmor, skillWorks, blacklist, history_punish, history_nicks, history_reports, passport, passport_serial, passport_number, marriage, military_card, admin_info, mailing_project, mailing_server, bank_card, temporary_var, limit_report, last_message, reDesign, inventory, family, timeEventCollectors, notes_telephone, promocode, temporary_var2) VALUES " \
-                       f"('{vk_id}', " \
+                       f"('{user_id}', " \
                        f"'', " \
                        f"'На этапе регистрации', " \
                        f"'❌ Отсутствует', " \
