@@ -10,7 +10,7 @@ import asyncio, ast, json, time, datetime, random, traceback
 from vkbottle.bot import Bot, Message, MessageEvent
 from vkbottle import API, LoopWrapper, GroupEventType
 
-from modules import database, registration
+from modules import database, registration, excursion
 # ——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 STATES = {'registration.registration_1': registration.registration_1,
@@ -36,4 +36,15 @@ STATES = {'registration.registration_1': registration.registration_1,
           'registration.registration_9': registration.registration_9,
           'registration.registration_9_1': registration.registration_9_1,
           'registration.newAccaunt': registration.newAccaunt,
+          'excursion.Show1': excursion.Show1,
+          'excursion.Show2': excursion.Show2,
+          'excursion.Show3': excursion.Show3,
+          'excursion.Show4': excursion.Show4,
+          'excursion.Show5': excursion.Show5,
+          'excursion.Show6': excursion.Show6,
+          'excursion.Show7': excursion.Show7,
+          'excursion.Show8': excursion.Show8,
+          'excursion.Show9': excursion.Show9,
+          'excursion.Show10': excursion.Show10,
+          'excursion.Show11': excursion.Show11,
         }
