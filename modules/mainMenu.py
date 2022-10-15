@@ -21,7 +21,7 @@ async def Show(message: Message, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
         await Mini(message, bot, api, DATA_USER, DATA_SETTINGS)
     else:
         server_settings = await database.getBdData('settings', 'id', "'1'")
-        num1 = await database.pretty(DATA_USER[11])
+        num1 = await database.pretty(DATA_USER[12])
         real_time = datetime.datetime.now()
         TEXT_OBJ = ''
         if int(real_time.hour) == 20:
@@ -88,7 +88,7 @@ async def ShowFixFromId(from_id, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
     if DATA_USER[40] == 1:
         await MiniFix(from_id, bot, api, DATA_USER, DATA_SETTINGS)
     else:
-        num1 = await database.pretty(DATA_USER[11])
+        num1 = await database.pretty(DATA_USER[12])
         real_time = datetime.datetime.now()
         TEXT_OBJ = ''
         if int(real_time.hour) == 20:
@@ -156,7 +156,7 @@ async def ShowFixFromId(from_id, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
 
 async def Mini(message: Message, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
     await database.setUserData(message.from_id, 'state', "'mainMenu.Mini'")
-    num1 = await database.pretty(DATA_USER[11])
+    num1 = await database.pretty(DATA_USER[12])
     real_time = datetime.datetime.now()
     TEXT_OBJ = ''
     if int(real_time.hour) == 20:
@@ -217,7 +217,7 @@ async def Mini(message: Message, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
 async def MiniFix(from_id, bot: Bot, api: API, DATA_USER, DATA_SETTINGS):
     await database.setUserData(from_id, 'state', "'mainMenu.Mini'")
     server_settings = await database.getBdData('settings', 'id', "'1'")
-    num1 = await database.pretty(DATA_USER[11])
+    num1 = await database.pretty(DATA_USER[12])
     real_time = datetime.datetime.now()
     TEXT_OBJ = ''
     if int(real_time.hour) == 20:
